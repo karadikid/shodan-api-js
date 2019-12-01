@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Random Cat API</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Random Cat API</h1>
+        </header>
+        <main>
+            <button class="randomButton">Shodan Webcams</button>
+            <div class="randomCams"><img src="" class="webcams"></div>
+            <form>
+                <input type="text" class="input" placeholder="Search Keys">
+                <button class="searchButton">Shodan Search</button>
+            </form>
+            <div class="search-keys">
+                <h3>Search Keys</h3>
+                <ul>
+                    <li>By Port: "port: number, number"</li>
+                    <li>By Organization: Company Name</li>
+                    <li>By network CIDR: net: 0.0.0.0/0 </li>
+                    <li>Chain multiple separated by spaces:  net: 8.9.9.0/24 port: 80, 443, org: Microsoft/li>
+                    <!-- <li>Other Search Key</li>
+                    <li>Other Search Key</li>
+                    <li>Other Search Key</li> -->
+                </ul>
+            </div>
+            <div class="searchKey"><img src="" class="searchKeyImage"></div>
+        </main>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
