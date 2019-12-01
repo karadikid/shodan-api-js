@@ -41,7 +41,7 @@ form.addEventListener("submit", evt => {
     .then(res => {
         queryResponse = res.matches
         // queryResponse.forEach(rawData(queryResponse));
-        queryResponse.forEach(element => (rawData(element)));
+        queryResponse.forEach(queryResponse => (rawData(queryResponse)));
         // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
         //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
         // innerHtml of a class of div / section / article - some container that will get CSS'd
@@ -53,7 +53,7 @@ form.addEventListener("submit", evt => {
 });
 
 function rawData(data){
-    document.querySelector(".rawData").innerHTML= JSON.stringify(`<section>${JSON.stringify(queryResponse)}</section>`);
+    document.querySelector(".rawData").innerHTML= `<section>${JSON.stringify(data)}</section>`;
 }
 
 // function addChild(data){
