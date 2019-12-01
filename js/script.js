@@ -40,8 +40,8 @@ form.addEventListener("submit", evt => {
     .then(res => res.json())
     .then(res => {
         queryResponse = res.matches
-        queryResponse.forEach(rawData(queryResponse));
-        //queryResponse.forEach(element => (rawData(element)));
+        // queryResponse.forEach(rawData(queryResponse));
+        queryResponse.forEach(element => (rawData(element)));
         // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
         //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
         // innerHtml of a class of div / section / article - some container that will get CSS'd
