@@ -53,5 +53,12 @@ form.addEventListener("submit", evt => {
 });
 
 function rawData(data){
-    document.querySelector(".rawData").innerHTML= JSON.stringify(queryResponse);
+    document.querySelector(".rawData").innerHTML= JSON.stringify(`<section>${JSON.stringify(queryResponse)}</section>`);
 }
+
+// function addChild(data){
+//     let child = document.createElement("section");
+//     let textnode = document.createTextNode(JSON.stringify(queryResponse));
+//     child.appendChild(textnode);
+//     document.querySelector(".rawData").appendChild(child);
+// }
