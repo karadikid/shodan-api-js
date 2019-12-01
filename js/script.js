@@ -13,7 +13,14 @@ const facets = "";
 const form = document.querySelector("form");
 const formInput = form.querySelector("input");
 
+//Urls
 const urlConcat = url + apiKey + query;
+
+//Response objects
+let queryResponse ={};
+
+//HTML Content
+//let rawData = document.querySelector("rawData");
 
 console.log(url);
 
@@ -32,9 +39,19 @@ form.addEventListener("submit", evt => {
     .then(console.log(url + apiKey + "&" + value))
     .then(res => res.json())
     .then(res => {
-      console.log(res);
+        queryResponse = res.matches
+        queryResponse.forEach(rawData(queryResponse));
+        //queryResponse.forEach(element => (rawData(element)));
+        // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
+        //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
+        // innerHtml of a class of div / section / article - some container that will get CSS'd
       //const categoryCatImageUrl = res[0].url;
       //console.log(res[0].url)
       //categoryCatImage.setAttribute("src", categoryCatImageUrl);
     });
+    
 });
+
+function rawData(data){
+    document.querySelector(".rawData").innerHTML= JSON.stringify(queryResponse);
+}
