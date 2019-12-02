@@ -5,7 +5,7 @@ console.log("Script Loaded");
 //https://api.shodan.io/shodan/host/search?key=6Ew4Z6p9kOwelROHLtOwn23ChCIoR0H1&query=port:1494,3389
 
 const url = "https://api.shodan.io/shodan/host/search?key=";
-const apiKey = "seLvBsg3NKgq4curaK5aHSqrWgkGt9lY";
+const apiKey = "gH5ZkYzHJ8DNRe3Nve0GLhdhn7lisx4r";
 const query = "&query=port:1494,3389 org:amazon web services";
 const facets = "";
 
@@ -44,27 +44,18 @@ form.addEventListener("submit", evt => {
     .then(console.log(url + apiKey + "&" + value))
     .then(res => res.json())
     .then(res => {
-<<<<<<< HEAD
       queryResponse = res.matches;
       // queryResponse.forEach(rawData(queryResponse));
       queryResponse.forEach(item => addChild(item));
       // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
       //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
       // innerHtml of a class of div / section / article - some container that will get CSS'd
-=======
-        queryResponse = res.matches
-        // queryResponse.forEach(rawData(queryResponse));
-        // queryResponse.forEach(queryResponse => (rawData(queryResponse)));
-        // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
-        //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
-        // innerHtml of a class of div / section / article - some container that will get CSS'd
->>>>>>> 4c038399251fcb4a09fdbddd1e7eb5dddb78736b
       //const categoryCatImageUrl = res[0].url;
       //console.log(res[0].url)
       //categoryCatImage.setAttribute("src", categoryCatImageUrl);
-      for (i = 0; i < queryResponse.length; i++) {
-          rawData(queryResponse[i]);
-      }
+      // for (i = 0; i < queryResponse.length; i++) {
+      //     rawData(queryResponse[i]);
+      // }
     });
 });
 
@@ -151,12 +142,10 @@ function createMap(long, lat, isp, ip) {
       center: { lng: long, lat: lat }
     }
   )
+  childMap.appendChild(textnodeMap);
   document.querySelector("#mapContainer").appendChild(childMap);
 }
 
-<<<<<<< HEAD
-//Add document.querySelector("#mapContainer").innerHTML = `${data.ip_str} ${data.isp} ${data.location.longitude} ${data.location.latitude}`
-=======
 // function addChild(data){
 //     let child = document.createElement("section");
 //     let textnode = document.createTextNode(JSON.stringify(queryResponse));
@@ -164,4 +153,3 @@ function createMap(long, lat, isp, ip) {
 //     document.querySelector(".rawData").appendChild(child);
 // }
 
->>>>>>> 4c038399251fcb4a09fdbddd1e7eb5dddb78736b
