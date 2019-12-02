@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<<<<<<< HEAD
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Shodan API</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+<!-- Here Libraries for Javascript -->
+    <script
+      src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <!-- Here for mobile screens -->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  </head>
+  <body>
+    <header>
+      <h1>Grey Pilgram Page</h1>
+    </header>
+    <main>
+      <button class="randomButton">Shodan Webcams</button>
+      <div class="randomCams"><img src="" class="webcams" /></div>
+      <form>
+        <input type="text" class="input" placeholder="Search Keys" />
+        <button class="searchButton">Shodan Search</button>
+      </form>
+      <div class="search-keys">
+        <h3>Search Keys</h3>
+        <ul>
+          <li>By Port: "port: number number"</li>
+          <li>By Organization: Company Name</li>
+          <li>By network CIDR: net: 0.0.0.0/0</li>
+          <li>
+            Chain multiple separated by spaces: net: 8.9.9.0/24 port: 80 443
+            org: Microsoft/li>
+            <!-- <li>Other Search Key</li>
+=======
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Shodan API</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="datafile.json"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Grey Pilgram Page</h1>
+        </header>
+        <main>
+            <button class="randomButton">Shodan Webcams</button>
+            <div class="randomCams"><img src="" class="webcams"></div>
+            <form>
+                <input type="text" class="input" placeholder="Search Keys">
+                <button class="searchButton">Shodan Search</button>
+            </form>
+            <div class="search-keys">
+                <h3>Search Keys</h3>
+                <ul>
+                    <li>By Port: "port: number number"</li>
+                    <li>By Organization: Company Name</li>
+                    <li>By network CIDR: net: 0.0.0.0/0 </li>
+                    <li>Chain multiple separated by spaces:  net: 8.9.9.0/24 port: 80 443 org: Microsoft/li>
+                    <!-- <li>Other Search Key</li>
+>>>>>>> 4c038399251fcb4a09fdbddd1e7eb5dddb78736b
+                    <li>Other Search Key</li>
+                    <li>Other Search Key</li> -->
+          </li>
+        </ul>
+      </div>
+      <div class="rawData"></div>
+      <div class="searchKey"><img src="" class="searchKeyImage" /></div>
+      <div style="width: 640px; height: 480px" id="mapContainer"></div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
