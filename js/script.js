@@ -41,13 +41,16 @@ form.addEventListener("submit", evt => {
     .then(res => {
         queryResponse = res.matches
         // queryResponse.forEach(rawData(queryResponse));
-        queryResponse.forEach(queryResponse => (rawData(queryResponse)));
+        // queryResponse.forEach(queryResponse => (rawData(queryResponse)));
         // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
         //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
         // innerHtml of a class of div / section / article - some container that will get CSS'd
       //const categoryCatImageUrl = res[0].url;
       //console.log(res[0].url)
       //categoryCatImage.setAttribute("src", categoryCatImageUrl);
+      for (i = 0; i < queryResponse.length; i++) {
+          rawData(queryResponse[i]);
+      }
     });
     
 });
