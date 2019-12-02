@@ -50,7 +50,7 @@ form.addEventListener("submit", evt => {
     });
 });
 
-//Adding child items for initial data - https://www.w3schools.com/jsref/met_node_appendchild.asp
+//Adding child items for initial data
 //Calling createMap() for iterating over HERE maps
 function addChild(data) {
   let child = document.createElement("section");
