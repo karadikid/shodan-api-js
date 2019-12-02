@@ -5,7 +5,7 @@ console.log("Script Loaded");
 //https://api.shodan.io/shodan/host/search?key=6Ew4Z6p9kOwelROHLtOwn23ChCIoR0H1&query=port:1494,3389
 
 const url = "https://api.shodan.io/shodan/host/search?key=";
-const apiKey = "gH5ZkYzHJ8DNRe3Nve0GLhdhn7lisx4r";
+const apiKey = "uBSyQy4PYkeknFcBrqBdsdLKmWFo7PFv";
 const query = "&query=port:1494,3389 org:amazon web services";
 const facets = "";
 
@@ -47,23 +47,11 @@ form.addEventListener("submit", evt => {
       queryResponse = res.matches;
       // queryResponse.forEach(rawData(queryResponse));
       queryResponse.forEach(item => addChild(item));
-      // jsDotList.forEach(jsDotList => jsDotList.addEventListener ('click', scoreUpdate));  From Dot Lab!
-      //Goal:  Iterate over each item then present it to the browser as text.  Allow it to print to the page
-      // innerHtml of a class of div / section / article - some container that will get CSS'd
-      //const categoryCatImageUrl = res[0].url;
-      //console.log(res[0].url)
-      //categoryCatImage.setAttribute("src", categoryCatImageUrl);
-      // for (i = 0; i < queryResponse.length; i++) {
-      //     rawData(queryResponse[i]);
-      // }
     });
 });
 
-// function rawData(data){
-//     document.querySelector(".rawData").innerHTML= `<section>${JSON.stringify(data.ip_str)}</section>`;
-//     console.log(data);
-// }
-
+//Adding child items for initial data
+//Calling createMap() for iterating over HERE maps
 function addChild(data) {
   let child = document.createElement("section");
   let childMap = document.createElement("section");
@@ -75,7 +63,12 @@ function addChild(data) {
   );
   child.appendChild(textnode);
   document.querySelector(".rawData").appendChild(child);
-  createMap(data.location.longitude, data.location.latitude, data.isp, data.ip_str);
+  createMap(
+    data.location.longitude,
+    data.location.latitude,
+    data.isp,
+    data.ip_str
+  );
   // document.querySelector("mapContainer").appendChild(childMap);
   console.log(data);
 }
@@ -107,16 +100,20 @@ var animatedSvg =
   'keyTimes="0;0.4;1" calcMode="spline" ' +
   'repeatCount="indefinite"/></ellipse></svg>';
 
-// //Create an icon object, an object with geographic coordinates and a marker:
-// var icon = new H.map.DomIcon(animatedSvg),
-//   coords = { lat: data.location.latitude, lng: data.location.longitude },
-//   marker = new H.map.DomMarker(coords, { icon: icon });
+/*  TRYING TO ADD MAP ICON OBJECT
+//Create an icon object, an object with geographic coordinates and a marker:
+var icon = new H.map.DomIcon(animatedSvg),
+  coords = { lat: data.location.latitude, lng: data.location.longitude },
+  marker = new H.map.DomMarker(coords, { icon: icon });
 
-// // Set map center and zoom, add the marker to the map:
-// map.setCenter(coords);
-// map.setZoom(18);
-// map.addObject(marker);
+// Set map center and zoom, add the marker to the map:
+map.setCenter(coords);
+map.setZoom(18);
+map.addObject(marker);
 
+END TRYING TO ADD MAP ICON OBJECT*/
+
+// Create (and display) DEFAULT map object:
 // Instantiate (and display) DEFAULT map object:
 // var map = new H.Map(
 //   document.getElementById("mapContainer"),
@@ -127,13 +124,14 @@ var animatedSvg =
 //   }
 // );
 
-// Instantiate (and display) a map object:
+
+// Create (and display) iterated map object:
 function createMap(long, lat, isp, ip) {
   console.log(long, lat);
   let childMap = document.createElement("section");
   let textnodeMap = document.createTextNode(
     `IP Address: ${ip} ISP: ${isp} Longitude: ${long} Latitude: ${lat}`
-  );  
+  );
   var map = new H.Map(
     document.getElementById("mapContainer"),
     maptypes.vector.normal.map,
@@ -141,15 +139,15 @@ function createMap(long, lat, isp, ip) {
       zoom: 10,
       center: { lng: long, lat: lat }
     }
-  )
+  );
   childMap.appendChild(textnodeMap);
   document.querySelector("#mapContainer").appendChild(childMap);
 }
 
+//STRINGIFY ATTEMPT FAIL
 // function addChild(data){
 //     let child = document.createElement("section");
 //     let textnode = document.createTextNode(JSON.stringify(queryResponse));
 //     child.appendChild(textnode);
 //     document.querySelector(".rawData").appendChild(child);
 // }
-
