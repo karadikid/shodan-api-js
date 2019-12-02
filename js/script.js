@@ -5,7 +5,7 @@ console.log("Script Loaded");
 //https://api.shodan.io/shodan/host/search?key=6Ew4Z6p9kOwelROHLtOwn23ChCIoR0H1&query=port:1494,3389
 
 const url = "https://api.shodan.io/shodan/host/search?key=";
-const apiKey = "";
+const apiKey = "seLvBsg3NKgq4curaK5aHSqrWgkGt9lY";
 const query = "&query=port:1494,3389 org:amazon web services";
 const facets = "";
 
