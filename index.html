@@ -47,8 +47,8 @@
           <li>By Organization: Company Name</li>
           <li>By network CIDR: net: 0.0.0.0/0</li>
           <li>
-            Chain multiple separated by %20 for spaces: net: 8.9.9.0/24 port:80,443
-            org:Microsoft/li>
+            Chain multiple separated by %20 for spaces: net: 8.9.9.0/24
+            port:80,443 org:Microsoft/li>
             <!-- <li>Other Search Key</li>
                     <li>Other Search Key</li>
                     <li>Other Search Key</li> -->
@@ -56,30 +56,22 @@
         </ul>
       </div>
       <!-- Trigger/Open the Modal -->
-      <div class="w3-container">
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
-      
-        <div id="id01" class="w3-modal"style="width: 640px; height: 480px">
-          <div class="w3-modal-content">
-            <header class="w3-container w3-teal"> 
-              <span onclick="document.getElementById('id01').style.display='none'" 
-              class="w3-button w3-display-topright">&times;</span>
-              <h2>Maps</h2>
-            </header>
-              <div class="w3-container">
-              <div class="rawData"></div>
-              <div class="searchKey"><img src="" class="searchKeyImage" /></div>
-              <div style="width: 640px; height: 480px" id="mapContainer"></div>
-            </div>
-            <footer class="w3-container w3-teal">
-              <p>Search Data</p>
-            </footer>
-          </div>
-        </div>
+      <button onclick="myFunction('Demo1')" class="w3-btn w3-block w3-black w3-left-align">Show Maps</button>
+      <div id="Demo1" class="w3-container w3-hide">
+        <div class="rawData"></div>
+        <div class="searchKey"><img src="" class="searchKeyImage" /></div>
+        <div style="width: 640px; height: 480px" id="mapContainer"></div>
       </div>
-      <!-- <div class="rawData"></div>
-      <div class="searchKey"><img src="" class="searchKeyImage" /></div>
-      <div style="width: 640px; height: 480px" id="mapContainer"></div> -->
+      <script>
+      function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+      </script>
     </main>
     <script src="./js/script.js"></script>
   </body>
