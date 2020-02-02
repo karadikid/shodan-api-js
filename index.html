@@ -1,49 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Shodan API</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="initial-scale=1.0,
-        width=device-width" />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Shodan API</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,
+        width=device-width"
+    />
 
-        <!-- HERE Libraries for Maps -->
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
-        type="text/javascript" charset="utf-8"></script>
-        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-        type="text/javascript" charset="utf-8"></script>
-    </head>
-    <body>
-        <header>
-            <h1>Grey Pilgrim Page</h1>
-        </header>
-        <main>
-            <button class="randomButton">Shodan Webcams</button>
-            <div class="randomCams"><img src="" class="webcams"></div>
-            <form>
-                <input type="text" class="input" placeholder="Search Keys">
-                <button class="searchButton">Shodan Search</button>
-            </form>
-            <div class="search-keys">
-                <h3>Search Keys</h3>
-                <ul>
-                    <li>By Port: "port: number number"</li>
-                    <li>By Organization: Company Name</li>
-                    <li>By network CIDR: net: 0.0.0.0/0 </li>
-                    <li>Chain multiple separated by spaces:  net: 8.9.9.0/24 port: 80 443 org: Microsoft/li>
-                    <!-- <li>Other Search Key</li>
+    <!-- HERE Libraries for Maps -->
+    <script
+      src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>Grey Pilgrim Page</h1>
+    </header>
+    <main>
+      <button class="randomButton">Shodan Webcams</button>
+      <div class="randomCams"><img src="" class="webcams" /></div>
+      <form>
+        <input type="text" class="input" placeholder="Search Keys" />
+        <button class="searchButton">Shodan Search</button>
+      </form>
+      <div class="search-keys">
+        <h3>Search Keys</h3>
+        <ul>
+          <li>By Port: "port: number number"</li>
+          <li>By Organization: Company Name</li>
+          <li>By network CIDR: net: 0.0.0.0/0</li>
+          <li>
+            Chain multiple separated by %20 for spaces: net: 8.9.9.0/24 port:80,443
+            org:Microsoft/li>
+            <!-- <li>Other Search Key</li>
                     <li>Other Search Key</li>
                     <li>Other Search Key</li> -->
           </li>
         </ul>
       </div>
-      <div class="rawData"></div>
+      <!-- Trigger/Open the Modal -->
+      <div class="w3-container">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+      
+        <div id="id01" class="w3-modal"style="width: 640px; height: 480px">
+          <div class="w3-modal-content">
+            <header class="w3-container w3-teal"> 
+              <span onclick="document.getElementById('id01').style.display='none'" 
+              class="w3-button w3-display-topright">&times;</span>
+              <h2>Maps</h2>
+            </header>
+              <div class="w3-container">
+              <div class="rawData"></div>
+              <div class="searchKey"><img src="" class="searchKeyImage" /></div>
+              <div style="width: 640px; height: 480px" id="mapContainer"></div>
+            </div>
+            <footer class="w3-container w3-teal">
+              <p>Search Data</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="rawData"></div>
       <div class="searchKey"><img src="" class="searchKeyImage" /></div>
-      <div style="width: 640px; height: 480px" id="mapContainer"></div>
+      <div style="width: 640px; height: 480px" id="mapContainer"></div> -->
     </main>
     <script src="./js/script.js"></script>
   </body>

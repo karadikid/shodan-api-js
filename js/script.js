@@ -1,11 +1,11 @@
-console.log("Script Loaded");
+console.log("We shall Shodan");
 
 //Search string port:1494,3389 org:"amazon web services"
 //URL https://api.shodan.io/shodan/host/search?key={YOUR_API_KEY}&query={query}&facets={facets}
 //https://api.shodan.io/shodan/host/search?key=6Ew4Z6p9kOwelROHLtOwn23ChCIoR0H1&query=port:1494,3389
 
 const url = "https://api.shodan.io/shodan/host/search?key=";
-const apiKey = "";
+const apiKey = "P6DismsMDH04p3i06eIhOmvtFVmz1Lgb";
 const query = "&query=port:1494,3389 org:amazon web services";
 const facets = "";
 
@@ -53,16 +53,16 @@ form.addEventListener("submit", evt => {
 //Adding child items for initial data - https://www.w3schools.com/jsref/met_node_appendchild.asp
 //Calling createMap() for iterating over HERE maps
 function addChild(data) {
-  let child = document.createElement("section");
-  let childMap = document.createElement("section");
-  let textnodeMap = document.createTextNode(
-    data.location.latitude + data.location.longitude
-  );
-  let textnode = document.createTextNode(
-    data.ip_str + data.isp + data.location.longitude + data.location.latitude
-  );
-  child.appendChild(textnode);
-  document.querySelector(".rawData").appendChild(child);
+  // let child = document.createElement("section");
+  // let childMap = document.createElement("section");
+  // let textnodeMap = document.createTextNode(
+  //   data.location.latitude + data.location.longitude
+  // );
+  // let textnode = document.createTextNode(
+  //   data.ip_str + data.isp + data.location.longitude + data.location.latitude
+  // );
+  // child.appendChild(textnode);
+  // document.querySelector(".rawData").appendChild(child);
   createMap(
     data.location.longitude,
     data.location.latitude,
