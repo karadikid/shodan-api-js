@@ -30,7 +30,7 @@ form.addEventListener("submit", evt => {
   const value = formInput.value;
   //   fetch(url  apiKey + "&" + value)
   fetch(`${url}${apiKey}&query=${value}`)
-    .then(console.log(url + apiKey + "&" + value))
+    .then(console.log(url + apiKey + "&query=" + value))
     .then(res => res.json())
     .then(res => {
       queryResponse = res.matches;
