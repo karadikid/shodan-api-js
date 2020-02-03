@@ -48,29 +48,31 @@
           <li>By network CIDR: net: 0.0.0.0/0</li>
           <li>
             Chain multiple separated by %20 for spaces: net: 8.9.9.0/24
-            port:80,443 org:Microsoft/li>
-            <li>Use %20 for spaces</li>
-                    <li>Other Search Key</li>
-                    <li>Other Search Key</li> -->
+            port:80,443 org:Microsoft
           </li>
         </ul>
       </div>
       <!-- Trigger/Open the Modal -->
-      <button onclick="myFunction('Demo1')" class="w3-btn w3-block w3-black w3-left-align">Show Maps</button>
+      <button
+        onclick="myFunction('Demo1')"
+        class="w3-btn w3-block w3-black w3-left-align"
+      >
+        Show Maps
+      </button>
       <div id="Demo1" class="w3-container w3-hide">
         <div class="rawData"></div>
         <div class="searchKey"><img src="" class="searchKeyImage" /></div>
         <div style="width: 640px; height: 480px" id="mapContainer"></div>
       </div>
       <script>
-      function myFunction(id) {
-        var x = document.getElementById(id);
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else { 
-          x.className = x.className.replace(" w3-show", "");
+        function myFunction(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
         }
-      }
       </script>
     </main>
     <script src="./js/script.js"></script>
