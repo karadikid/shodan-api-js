@@ -24,17 +24,6 @@ const urlConcat = url + apiKey + query;
 //Response objects
 let queryResponse = {};
 
-//HTML Content
-//let rawData = document.querySelector("rawData");
-
-console.log(url);
-
-//Initial Query
-// fetch(urlConcat)
-//   .then(console.log(urlConcat))
-//   .then(res => res.json())
-//   .then(res => console.log(res));
-
 form.addEventListener("submit", evt => {
   evt.preventDefault();
 
@@ -53,16 +42,7 @@ form.addEventListener("submit", evt => {
 //Adding child items for initial data - https://www.w3schools.com/jsref/met_node_appendchild.asp
 //Calling createMap() for iterating over HERE maps
 function addChild(data) {
-  // let child = document.createElement("section");
-  // let childMap = document.createElement("section");
-  // let textnodeMap = document.createTextNode(
-  //   data.location.latitude + data.location.longitude
-  // );
-  // let textnode = document.createTextNode(
-  //   data.ip_str + data.isp + data.location.longitude + data.location.latitude
-  // );
-  // child.appendChild(textnode);
-  // document.querySelector(".rawData").appendChild(child);
+
   createMap(
     data.location.longitude,
     data.location.latitude,
@@ -100,29 +80,6 @@ var animatedSvg =
   'keyTimes="0;0.4;1" calcMode="spline" ' +
   'repeatCount="indefinite"/></ellipse></svg>';
 
-/*  TRYING TO ADD MAP ICON OBJECT
-//Create an icon object, an object with geographic coordinates and a marker:
-var icon = new H.map.DomIcon(animatedSvg),
-  coords = { lat: data.location.latitude, lng: data.location.longitude },
-  marker = new H.map.DomMarker(coords, { icon: icon });
-
-// Set map center and zoom, add the marker to the map:
-map.setCenter(coords);
-map.setZoom(18);
-map.addObject(marker);
-
-END TRYING TO ADD MAP ICON OBJECT*/
-
-// Create (and display) DEFAULT map object:
-// Instantiate (and display) DEFAULT map object:
-// var map = new H.Map(
-//   document.getElementById("mapContainer"),
-//   maptypes.vector.normal.map,
-//   {
-//     zoom: 10,
-//     center: { lng: 13.4, lat: 52.51 }
-//   }
-// );
 
 
 // Create (and display) iterated map object:
@@ -153,11 +110,3 @@ function myFunction(id) {
   }
 }
 
-
-//STRINGIFY ATTEMPT FAIL
-// function addChild(data){
-//     let child = document.createElement("section");
-//     let textnode = document.createTextNode(JSON.stringify(queryResponse));
-//     child.appendChild(textnode);
-//     document.querySelector(".rawData").appendChild(child);
-// }
